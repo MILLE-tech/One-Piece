@@ -1,0 +1,118 @@
+/* Styles globaux */
+body {
+    background-color: #1E3D59; /* Océan profond */
+    color: #FFF;
+    font-family: 'Trebuchet MS', sans-serif;
+    margin: 390px;
+    padding: 0;
+    padding-top: 80px; /* Espace pour la barre de navigation fixe */
+    background-image: url('one-piece-luffy-sunset-desktop-wallpaper-preview.jpg'); /* Remplace par ton image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Barre de navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0d3b66c9; /* Couleur sombre océan */
+    border-bottom: 5px solid #ffd900; /* Bordure dorée pour rappeler le trésor */
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Centre le contenu de la barre */
+    align-items: center;
+    height: 60px; /* Hauteur de la barre */
+}
+
+/* Liste de navigation */
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex; /* Affiche les éléments en ligne */
+}
+
+nav ul li {
+    margin: 0 20px; /* Espace entre les éléments */
+}
+
+/* Style des liens */
+nav ul li a {
+    color: #FFD700; /* Or pour le trésor */
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Effet "bordure dorée dynamique" au survol */
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background-color: #FFD700; /* Bordure dorée */
+    bottom: 0;
+    left: 0;
+    transition: width 0.4s ease-out;
+}
+
+nav ul li a:hover::before {
+    width: 100%; /* Bordure dorée apparaît en dessous du lien */
+}
+
+/* Effet "lumière dorée subtile" */
+nav ul li a:hover {
+    color: #FFFFFF; /* Changement de couleur vers le blanc */
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7); /* Légère lueur dorée */
+    transform: scale(1.1); /* Le lien grandit légèrement au survol */
+    transition: transform 0.3s ease-out;
+}
+
+
+@keyframes pirate-swing {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Titre principal */
+h1 {
+    font-size: 48px;
+    text-align: center;
+    color: #FFD700; 
+    text-shadow: 3px 3px #000;
+    font-family: 'Pirata One', cursive;
+    margin-bottom: 20px;
+    border-bottom: 5px solid #FFD700;
+    border-radius: 90px;
+
+}
+
+/* Paragraphe */
+p {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    line-height: 1.6;
+    font-size: 18px;
+    text-align: justify;
+    border-left: 5px solid #87CEEB;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Apparence mobile-friendly */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+    }
+}

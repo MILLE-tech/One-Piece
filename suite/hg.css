@@ -1,0 +1,48 @@
+/* Styles globaux */
+body {
+    background-color: #1E3D59; /* Océan profond */
+    color: #FFF;
+    font-family: 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 80px; /* Espace pour la barre de navigation si ajoutée plus tard */
+    background-size: cover;
+    background-position: center;
+    line-height: 1.6; /* Meilleure lisibilité */
+}
+
+/* Titre principal */
+h1 {
+    font-size: 48px;
+    text-align: center;
+    color: #FFD700; /* Doré pour rappeler le trésor */
+    text-shadow: 3px 3px #000;
+    font-family: 'Pirata One', cursive; /* Police pirate */
+    margin-bottom: 20px;
+    border-bottom: 5px solid #FFD700;
+    padding-bottom: 10px;
+}
+
+/* Paragraphe */
+p {
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: justify;
+    border-left: 5px solid #87CEEB; /* Bordure pour rappeler l'eau */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+}
+
+/* Apparence mobile-friendly */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+    
+    p {
+        font-size: 16px;
+        padding: 15px;
+    }
+}
