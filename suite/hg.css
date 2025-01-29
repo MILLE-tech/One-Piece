@@ -2,25 +2,33 @@
 body {
     background-color: #1E3D59; /* Océan profond */
     color: #FFF;
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: 'Pirata One', cursive;
     margin: 0;
-    padding: 0;
-    padding-top: 80px; /* Espace pour la barre de navigation si ajoutée plus tard */
+    padding: 250px;
+    padding-top: 80px;
+    background-image: url('istockphoto-1144627072-612x612.jpg'); /* Image d'océan */
     background-size: cover;
     background-position: center;
-    line-height: 1.6; /* Meilleure lisibilité */
+    overflow: hidden; /* Cache les objets qui flottent */
 }
 
 /* Titre principal */
 h1 {
     font-size: 48px;
     text-align: center;
-    color: #FFD700; /* Doré pour rappeler le trésor */
+    color: #FFD700; /* Doré pour le trésor */
     text-shadow: 3px 3px #000;
-    font-family: 'Pirata One', cursive; /* Police pirate */
     margin-bottom: 20px;
-    border-bottom: 5px solid #FFD700;
-    padding-bottom: 10px;
+    animation: title-sway 5s ease-in-out infinite; /* Balancement lent et fluide */
+    transform: translateZ(0); /* Accélération matérielle */
+    will-change: transform; /* Optimisation pour l'animation */
+}
+
+/* Animation pour le balancement du titre */
+@keyframes title-sway {
+    0% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+    100% { transform: rotate(-2deg); }
 }
 
 /* Paragraphe */
@@ -30,9 +38,77 @@ p {
     border-radius: 10px;
     font-size: 18px;
     text-align: justify;
-    border-left: 5px solid #87CEEB; /* Bordure pour rappeler l'eau */
+    border-left: 5px solid #87CEEB; /* Bordure rappelant l'eau */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     margin: 20px;
+    animation: float 5s ease-in-out infinite; /* Effet de flottement plus lent */
+    transform: translateZ(0); /* Accélération matérielle */
+    will-change: transform; /* Optimisation pour l'animation */
+}
+
+/* Animation de flottement pour le texte */
+@keyframes float {
+    0% { transform: translateY(5px); }
+    50% { transform: translateY(-5px); } /* Amplitude réduite pour éviter les sauts brusques */
+    100% { transform: translateY(5px); }
+}
+
+/* Objets flottants */
+.object {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url('./download.jpeg'); /* Remplace par l'image correcte */
+    background-size: cover;
+    animation: float-object 20s ease-in-out infinite; /* Animation plus lente */
+    transform: translateZ(0); /* Accélération matérielle */
+    will-change: transform; /* Optimisation pour l'animation */
+}
+
+/* Animation pour les objets qui flottent */
+@keyframes float-object {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); } /* Amplitude réduite pour plus de fluidité */
+    100% { transform: translateY(0px); }
+}
+
+/* Positionnement des objets */
+.object1 {
+    left: 10%;
+    top: 80%;
+    animation-delay: 2s;
+}
+
+.object2 {
+    right: 5%;
+    top: 85%;
+    animation-delay: 1s;
+}
+
+/* Apparence des liens */
+a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Effet au survol des liens */
+a:hover {
+    color: #87CEEB;
+    text-shadow: 0 0 5px #FFF;
+    animation: swing 1s ease-in-out; /* Balancement plus fluide des liens */
+    transform: translateZ(0); /* Accélération matérielle */
+    will-change: transform; /* Optimisation pour l'animation */
+}
+
+@keyframes swing {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
 }
 
 /* Apparence mobile-friendly */
@@ -44,5 +120,10 @@ p {
     p {
         font-size: 16px;
         padding: 15px;
+    }
+    
+    .object {
+        width: 50px;
+        height: 50px;
     }
 }
